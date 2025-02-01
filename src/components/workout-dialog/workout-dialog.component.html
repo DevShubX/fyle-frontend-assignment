@@ -1,0 +1,41 @@
+<div>
+    <p-button label="Add Workout" (click)="onAddWorkOutVisible()" />
+    <p-dialog header="Add Workout" [modal]="true" [(visible)]="visible" [style]="{width : '30rem'}">
+        <form [formGroup]="userWorkOutForm">
+            <span class="text-slate-500 block mb-8">
+                Add workout details
+            </span>
+            <div class="space-y-6">
+                <div>
+                    <p-float-label variant="on" class="w-full">
+                        <label for="username">User Name*</label>
+                        <input pInputText id="username" type="text" class="w-full" autocomplete="off" formControlName="username" />
+                    </p-float-label>
+                </div>
+                <div formArrayName="workouts" class="space-y-5">
+                    <div *ngFor="let workout of userWorkOutForm.controls.workouts.controls ; let i=index" [formGroupName]="i" class="flex gap-x-5">
+                        <p-float-label variant="on" class="w-full">
+                            <label for="type">Workout Type*</label>
+                            <input pInputText id="type" type="text" class="w-full" autocomplete="off"
+                                formControlName="type" />
+                        </p-float-label>
+                        <p-float-label variant="on" class="w-full">
+                            <label for="minutes">Workout Minutes*</label>
+                            <input pInputText id="minutes" type="text" class="w-full" autocomplete="off"
+                                formControlName="minutes" />
+                        </p-float-label>
+                        <button (click)="onHandleRemove(i)">
+                            ❌
+                        </button>
+                    </div>
+                </div>
+                <div class="flex justify-between" >
+                    <p-button (click)="onHandleAdd()" title="Add Workout">
+                        <lucide-icon [img]="Plus"></lucide-icon>
+                    </p-button>
+                    <p-button label="Submit" (click)="onHandleSubmit()" [disabled]="!userWorkOutForm.valid"/>
+                </div>
+            </div>
+        </form>
+    </p-dialog>
+</div>

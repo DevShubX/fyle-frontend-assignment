@@ -1,0 +1,23 @@
+<div>
+    <div class="mb-5">
+        <a routerLink="/" class="font-bold border border-blue-400 p-2 rounded-lg bg-blue-200">
+            Back to home
+        </a>
+    </div>
+    <div class="flex items-start gap-x-10">
+        <div class="border border-slate-400 rounded-lg p-5 flex flex-col gap-y-3 text-xl w-[500px] max-h-[800px] overflow-y-scroll">
+            <div *ngFor="let user of userWorkouts" [ngClass]="{
+                'bg-slate-300 rounded-md' : userWorkOut.id === user.id,
+            }"
+            class="hover:bg-slate-400 p-2 border-b border-slate-400 hover:rounded-md" (click)="selectedUser(user.id)">
+                {{user.username}}
+            </div>
+        </div>
+        <div class="w-full">
+            <h1 class="text-4xl font-medium">
+                {{userWorkOut.username}}'s workout progress
+            </h1>
+            <p-chart type="bar" [data]="basicData" [options]="basicOptions" [style]="{width : '25rem'}" />
+        </div>
+    </div>
+</div>
