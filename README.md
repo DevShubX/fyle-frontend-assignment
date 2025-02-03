@@ -57,3 +57,15 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Code Coverage Report
+
+=============================== Coverage summary ===============================
+
+Statements   : 67.64% ( 23/34 )
+
+Branches     : 62.5% ( 5/8 )
+
+Functions    : 66.66% ( 8/12 )
+
+Lines        : 65.62% ( 21/32 )
