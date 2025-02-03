@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
@@ -24,22 +24,24 @@ import { RefreshService } from "../../services/data-refresh/data-refresh.service
 })
 
 
-export class WorkOutDialog {
+export class WorkOutDialog{
 
-    constructor(
-        private workOutLocalStorageService : WorkOutLocalStorage,
-        private refreshService:RefreshService
-    ){}
-
-    readonly Plus = Plus;
     visible: boolean = false;
 
+    readonly Plus = Plus;
+
+    constructor(
+        private workOutLocalStorageService: WorkOutLocalStorage,
+        private refreshService: RefreshService
+    ) { }
+
+
     userWorkOutForm = new FormGroup({
-        username: new FormControl("",[Validators.required]),
+        username: new FormControl("", [Validators.required]),
         workouts: new FormArray([
             new FormGroup({
-                type: new FormControl("",[Validators.required]),
-                minutes: new FormControl("",[Validators.required]),
+                type: new FormControl("", [Validators.required]),
+                minutes: new FormControl("", [Validators.required]),
             },),
         ]),
     })
@@ -58,13 +60,13 @@ export class WorkOutDialog {
     onHandleAdd() {
         this.userWorkOutForm.controls.workouts.push(
             new FormGroup({
-                type: new FormControl("",[Validators.required]),
-                minutes: new FormControl("",[Validators.required]),
+                type: new FormControl("", [Validators.required]),
+                minutes: new FormControl("", [Validators.required]),
             })
         )
     }
 
-    onSubmitFormReset(){
+    onSubmitFormReset() {
         this.userWorkOutForm.reset();
         this.userWorkOutForm.controls.workouts.clear();
         this.onHandleAdd();
@@ -85,5 +87,5 @@ export class WorkOutDialog {
             this.refreshService.triggerRefresh();
         }
     }
-   
+
 }
