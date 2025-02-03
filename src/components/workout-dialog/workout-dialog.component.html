@@ -5,14 +5,14 @@
             <span class="text-slate-500 block mb-8">
                 Add workout details
             </span>
-            <div class="space-y-6">
-                <div>
+            <div>
+                <div class="mb-6">
                     <p-float-label variant="on" class="w-full">
                         <label for="username">User Name*</label>
                         <input pInputText id="username" type="text" class="w-full" autocomplete="off" formControlName="username" />
                     </p-float-label>
                 </div>
-                <div formArrayName="workouts" class="flex flex-col gap-y-5">
+                <div formArrayName="workouts" class="flex flex-col gap-y-5 mb-6">
                     <div *ngFor="let workout of userWorkOutForm.controls.workouts.controls ; let i=index" [formGroupName]="i" class="flex gap-x-5">
                         <p-float-label variant="on" class="w-full">
                             <label for="type">Workout Type*</label>
