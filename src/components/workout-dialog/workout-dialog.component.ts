@@ -3,11 +3,11 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabel } from 'primeng/floatlabel';
-import { ReactiveFormsModule, FormGroup, FormControl, FormArray, FormBuilder, Validators } from "@angular/forms";
+import { ReactiveFormsModule, FormGroup, FormControl, FormArray, Validators } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { LucideAngularModule, Plus } from 'lucide-angular';
-import { WorkOutLocalStorage } from "../../services/workout-localstorage.service";
-import { RefreshService } from "../../services/data-refresh.service";
+import { WorkOutLocalStorage } from "../../services/workout-localstorage/workout-localstorage.service";
+import { RefreshService } from "../../services/data-refresh/data-refresh.service";
 
 @Component({
     selector: "workout-dialog",

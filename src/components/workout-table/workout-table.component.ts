@@ -2,13 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { InputTextModule } from "primeng/inputtext";
 import { DropdownModule } from 'primeng/dropdown';
-import { WorkOutLocalStorage } from "../../services/workout-localstorage.service";
+import { WorkOutLocalStorage } from "../../services/workout-localstorage/workout-localstorage.service";
 import { UserWorkOut, Workout } from "../../models/workout.model";
 import { ButtonModule } from "primeng/button";
 import { TableModule } from 'primeng/table'
 import { CommonModule } from "@angular/common";
 import { PaginatorModule } from "primeng/paginator";
-import { RefreshService } from "../../services/data-refresh.service";
+import { RefreshService } from "../../services/data-refresh/data-refresh.service";
 
 @Component({
     selector: "workout-table",

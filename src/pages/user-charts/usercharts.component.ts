@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, inject, OnInit, PLATFORM_ID } from "@angular/core";
-import { WorkOutLocalStorage } from "../../services/workout-localstorage.service";
+import { WorkOutLocalStorage } from "../../services/workout-localstorage/workout-localstorage.service";
 import { UserWorkOut, Workout } from "../../models/workout.model";
 import { ChartModule } from 'primeng/chart';
 import { CommonModule, isPlatformBrowser } from "@angular/common";

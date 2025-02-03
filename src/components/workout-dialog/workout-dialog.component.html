@@ -1,5 +1,5 @@
 <div>
-    <p-button label="Add Workout" (click)="onAddWorkOutVisible()" />
+    <p-button label="Add Workout" (click)="onAddWorkOutVisible()" id="open-workout"/>
     <p-dialog header="Add Workout" [modal]="true" [(visible)]="visible" [style]="{width : '30rem'}">
         <form [formGroup]="userWorkOutForm">
             <span class="text-slate-500 block mb-8">
@@ -24,16 +24,16 @@
                             <input pInputText id="minutes" type="text" class="w-full" autocomplete="off"
                                 formControlName="minutes" />
                         </p-float-label>
-                        <button (click)="onHandleRemove(i)">
+                        <button (click)="onHandleRemove(i)" id="remove-workout">
                             ❌
                         </button>
                     </div>
                 </div>
                 <div class="flex justify-between" >
-                    <p-button (click)="onHandleAdd()" title="Add Workout">
+                    <p-button (click)="onHandleAdd()" title="Add Workout" id="Add">
                         <lucide-icon [img]="Plus"></lucide-icon>
                     </p-button>
-                    <p-button label="Submit" (click)="onHandleSubmit()" [disabled]="!userWorkOutForm.valid"/>
+                    <p-button label="Submit" id="submit" (click)="onHandleSubmit()" [disabled]="!userWorkOutForm.valid"/>
                 </div>
             </div>
         </form>
